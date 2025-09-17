@@ -40,30 +40,30 @@ O projeto é dividido em várias classes, cada uma com uma responsabilidade espe
 - Python 3.x
 - Bibliotecas Python:
   - `pandas`
-  - `psycopg2-binary`
-  - `gdown`
-  - `openpyxl`
-  - `xlrd`
-  - `google-generativeai`
+    - `psycopg2-binary`
+      - `gdown`
+        - `openpyxl`
+          - `xlrd`
+            - `google-generativeai`
 
-## Configuração
+            ## Configuração
 
-1.  **Variáveis de Ambiente**: As credenciais do banco de dados e a chave da API do Google devem ser configuradas como segredos no ambiente (por exemplo, usando `userdata` no Google Colab).
-    - `SUPABASE_HOST`
-    - `SUPABASE_NAME`
-    - `SUPABASE_USER`
-    - `SUPABASE_PASS`
-    - `SUPABASE_PORT`
-    - `GOOGLE_API_KEY`
-    - `GOOGLE_GENERATIVE_MODEL` (opcional)
-    - `GOOGLE_GENAI_RATE_LIMIT` (opcional)
-    - `GOOGLE_GENAI_RATE_LIMIT_WINDOW` (opcional)
+            1.  **Variáveis de Ambiente**: As credenciais do banco de dados e a chave da API do Google devem ser configuradas como segredos no ambiente (por exemplo, usando `userdata` no Google Colab).
+                - `SUPABASE_HOST`
+                    - `SUPABASE_NAME`
+                        - `SUPABASE_USER`
+                            - `SUPABASE_PASS`
+                                - `SUPABASE_PORT`
+                                    - `GOOGLE_API_KEY`
+                                        - `GOOGLE_GENERATIVE_MODEL` (opcional)
+                                            - `GOOGLE_GENAI_RATE_LIMIT` (opcional)
+                                                - `GOOGLE_GENAI_RATE_LIMIT_WINDOW` (opcional)
 
-2.  **Configuração do Fluxo de Trabalho**: A execução de cada etapa principal do processo pode ser habilitada ou desabilitada no bloco de execução principal, modificando os dicionários `infra_config`, `exclusion_config`, `vr_sql_agent_config` e `export_config`.
+                                                2.  **Configuração do Fluxo de Trabalho**: A execução de cada etapa principal do processo pode ser habilitada ou desabilitada no bloco de execução principal, modificando os dicionários `infra_config`, `exclusion_config`, `vr_sql_agent_config` e `export_config`.
 
-## Como Usar
+                                                ## Como Usar
 
-1.  Configure as credenciais do banco de dados e da API como segredos.
-2.  Certifique-se de que o arquivo de modelo do Excel (`VR_MENSAL_05.2025.xlsx`) esteja no local esperado (`/content/planilhas/`).
-3.  Execute o script Python. O script executará o fluxo de trabalho completo, desde o download dos dados até a exportação do relatório final.
-4.  O arquivo de saída, `VR MENSAL 05.2025.xlsx`, será salvo no diretório `/content/resultado`.
+                                                1.  Configure as credenciais do banco de dados e da API como segredos.
+                                                2.  Certifique-se de que o arquivo de modelo do Excel (`VR_MENSAL_05.2025.xlsx`) esteja no local esperado (`/content/planilhas/`).
+                                                3.  Execute o script Python. O script executará o fluxo de trabalho completo, desde o download dos dados até a exportação do relatório final.
+                                                4.  O arquivo de saída, `VR MENSAL 05.2025.xlsx`, será salvo no diretório `/content/resultado`.
